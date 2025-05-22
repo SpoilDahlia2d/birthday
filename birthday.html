@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <title>🎂 Happy Birthday DAHLIA🎂</title>
+  <title>🎂 Happy Birthday DAHLIA 🎂</title>
   <style>
     body {
       background-color: black;
@@ -35,15 +35,18 @@
   </style>
 </head>
 <body>
-  <h1>🎉 How many years ago today Dahlia? 🎉</h1>
-  <input type="text" id="ageInput" placeholder="Write a number...">
+  <h1>🎉How many years ago today Dahlia? 🎉</h1>
+  <input type="text" id="ageInput" placeholder="Scrivi un numero...">
   <br>
-  <button onclick="checkAge()">Send 🎁</button>
+  <button onclick="checkAge()">Send Your Answer🎁</button>
   <p id="message" style="color: red; font-weight: bold;"></p>
 
   <div id="reward" class="hidden">
     <img src="image.jpg" alt="Surprise 😈">
-    <a href="https://mega.nz/tuo-link" target="_blank">🔥 Download 🔥</a>
+    <a href="https://www.mediafire.com/file/01pawvyjghsvu6v/dahlia2.zip/file" target="_blank">🔥 DOWNLOAD 🔥</a>
+    <audio id="audio" autoplay>
+      <source src="audio.mp3" type="audio/mpeg">
+    </audio>
   </div>
 
   <script>
@@ -51,12 +54,16 @@
       const input = document.getElementById('ageInput').value.trim();
       const message = document.getElementById('message');
       const reward = document.getElementById('reward');
+      const audio = document.getElementById('audio');
 
-      if (input === "26") { // Cambia con la tua età
+      if (input === "26") {
         message.textContent = "";
         reward.classList.remove("hidden");
+        audio.play().catch(() => {
+          console.log("Audio bloccato dal browser.");
+        });
       } else {
-        message.textContent = "Nope 😘 Proof!";
+        message.textContent = "Nope 😘 Try again!";
         reward.classList.add("hidden");
       }
     }
