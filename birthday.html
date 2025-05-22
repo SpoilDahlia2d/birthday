@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>🎂 Happy Birthday DAHLIA🎂</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 18px;
+      margin-top: 10px;
+    }
+    .hidden {
+      display: none;
+    }
+    img {
+      margin-top: 20px;
+      width: 80%;
+      border: 4px solid hotpink;
+      border-radius: 10px;
+    }
+    a {
+      display: block;
+      margin-top: 20px;
+      font-size: 20px;
+      color: hotpink;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎉 How many years ago today Dahlia? 🎉</h1>
+  <input type="text" id="ageInput" placeholder="Write a number...">
+  <br>
+  <button onclick="checkAge()">Send 🎁</button>
+  <p id="message" style="color: red; font-weight: bold;"></p>
+
+  <div id="reward" class="hidden">
+    <img src="image.jpg" alt="Surprise 😈">
+    <a href="https://mega.nz/tuo-link" target="_blank">🔥 Download 🔥</a>
+  </div>
+
+  <script>
+    function checkAge() {
+      const input = document.getElementById('ageInput').value.trim();
+      const message = document.getElementById('message');
+      const reward = document.getElementById('reward');
+
+      if (input === "26") { // Cambia con la tua età
+        message.textContent = "";
+        reward.classList.remove("hidden");
+      } else {
+        message.textContent = "Nope 😘 Proof!";
+        reward.classList.add("hidden");
+      }
+    }
+  </script>
+</body>
+</html>
